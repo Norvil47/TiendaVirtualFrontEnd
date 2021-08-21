@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
-
+import logo from "./logo.svg";
+import "./App.css";
+import HomePage from "./pages/HomePage";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+} from "react-router-dom";
+import PagarPage from "./pages/PagarPage";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="row justify-content-center">
+      <div className="col-xl-10">
+        <div className="card">
+          <div className="card-body">
+           
+            <Router>
+            <ul>
+                <li>
+                  <Link to="/">Inicio</Link>
+                </li>
+                <li>
+                  <Link to="/Pagar">Ir a Pagar</Link>
+                </li>               
+              </ul>
+              
+                <Route exact path="/" component={HomePage} />
+                <Route exact path="/Pagar" component={PagarPage} />
+              
+            </Router>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
