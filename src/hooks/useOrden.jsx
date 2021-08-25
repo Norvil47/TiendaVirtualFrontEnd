@@ -14,9 +14,23 @@ export const useOrden = () => {
 
         alert("Error al leer datos");
       });
+      
+  };
+  const getOrdenes = async (fn) => {
+    
+    await ApiTienda.get("/Orden")
+      .then((response) => {
+        fn(response.data);
+      })
+      .catch((err) => {
+
+        alert("Error al leer datos");
+      });
+      
   };
 
   return {
     postOrden,
+    getOrdenes
   };
 };

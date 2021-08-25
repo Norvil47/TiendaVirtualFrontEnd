@@ -1,13 +1,15 @@
 import logo from "./logo.svg";
 import "./App.css";
 import HomePage from "./pages/HomePage";
+import OrdenesPage from "./pages/OrdenesPage";
+import PagarPage from "./pages/PagarPage";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
 } from "react-router-dom";
-import PagarPage from "./pages/PagarPage";
+
 function App() {
   return (
     <div className="row justify-content-center">
@@ -21,12 +23,14 @@ function App() {
                   <Link to="/">Inicio</Link>
                 </li>
                 <li>
-                  <Link to="/Pagar">Ir a Pagar</Link>
+                  <Link to="/Pagar">Ir a Pagar</Link>                 
                 </li>               
+                <li> <Link to="/OrdenesPage">Ordenes</Link></li>
               </ul>
               
                 <Route exact path="/" component={HomePage} />
                 <Route exact path="/Pagar" component={PagarPage} />
+                <Route exact path="/OrdenesPage" component={OrdenesPage} />
               
             </Router>
           </div>

@@ -19,10 +19,11 @@ const PagarPage = () => {
       data = "[]";
     }
     data = JSON.parse(data);
-    setcarrito(data);
-    carrito.map((item) => {
+    setcarrito(data);    
+    data.map((item) => {
       setTotal(total + item.producto.precio * item.cantidad);
     });
+    console.log(total)
   };
   const guardarOrden = () => {
    
@@ -77,7 +78,7 @@ const PagarPage = () => {
             </thead>
             <tbody>
               {carrito.map((item) => (
-                <tr>
+                <tr key="item.idproducto">
                   <td>{item.producto.nombre}</td>
                   <td className="text-right">
                     {item.producto.precio.toFixed(2)}
